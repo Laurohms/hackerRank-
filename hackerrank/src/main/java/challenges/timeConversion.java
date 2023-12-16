@@ -5,21 +5,20 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class timeConversion {
-    public static String timeConversion(String s) {
-    String stringDate = null;
-    
-    try {
-    SimpleDateFormat sdfInput = new SimpleDateFormat("hh:mm:ssa");
+	public static String timeConversion(String s) {
+		String stringDate = null;
 
-    SimpleDateFormat sdfOutput = new SimpleDateFormat("HH:mm:ss");
+		try {
+			SimpleDateFormat sdfInput = new SimpleDateFormat("hh:mm:ssa");
 
-    Date date = sdfInput.parse(s);
+			SimpleDateFormat sdfOutput = new SimpleDateFormat("HH:mm:ss");
 
-    stringDate = sdfOutput.format(date);
-    }
-    catch (ParseException e){
-        e.printStackTrace();
-    }
-    return stringDate;
-    }
+			Date date = sdfInput.parse(s);
+
+			stringDate = sdfOutput.format(date);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return stringDate;
+	}
 }
